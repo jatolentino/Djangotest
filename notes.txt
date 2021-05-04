@@ -1,0 +1,23 @@
+1. In terminal MINGW
+=================
+$ virtualenv -m venv env
+$ source env/snippets/activate
+$ pip install django
+$ pip install requests
+$ django-admin.py starproject webdjango
+
+2. Create folder and python code
+================================
+Webtest
+ |_webdjango
+ |	|_webdjango
+ |	|		|_ __init__.py, asgi.py, settings.py, urls.py, wsgi.py
+ |	|_manage.py	
+ |_env
+ |_request.py
+ 
+create file in Webtest folder called request.py, and add python code
+import requests
+inputs=request.get("https://reqres.in/api/users")
+print(inputs.text)
+

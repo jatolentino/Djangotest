@@ -52,4 +52,45 @@ inputs=requests.get("https://reqres.in/api/user")
     inputs=inputs.text
     return render(request,'home.html',{'inputs':inputs})
 
+6. Create templates, will contain all .html files
+=================================================
+Create the folder webdjango/templates
+
+In webdjango/webdjango/settings.py, add the directory template, line 57
+
+Create webdjango/templates/home.html, and add
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Python button snippet
+    </title>
+    </head>
+  <body>
+		<h2> Hello this is my first snippet </h2>
+      <button> Compile this snippet  </button> <hr>
+      {% if inputs %}
+      {{inputs}}
+      {% endif %}
+  </body>
+</html>
+
+7. Button function
+==================
+In webdjango/webdjango/views.py, add the button function
+
+def button(request):
+    return render(request,'home.html')
+		
+8. Add views of button and ouput functions
+===========================================
+In webdjango/webdjango/urls.py, and add
+from . import views
+from django.conf.urls import url
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    url(r'^$', views.button),
+    url(r'^out', views.out, name='snippet'),
+]
 

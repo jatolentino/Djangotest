@@ -21,3 +21,35 @@ import requests
 inputs=request.get("https://reqres.in/api/users")
 print(inputs.text)
 
+3. Test the server
+===================
+In terminal of VScode add the folder Webtest
+expand the terminal and navigate to new folder webdjango
+
+> cd webdjango
+> python manage.py runserver 127.0.0.1:8002
+
+Navigate to the URL  127.0.0.1:8002, check if worked
+Stop the server with CTRL + C
+
+4. Migrate
+===================
+> python manage.py migrate
+ERROR: TypeError: argument of type 'WindowsPath' is not iterable
+FIX: go to webdjango/webdjango/settings.py,add lin 14 and edit line 79
+import os
+'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
+
+5. Add python code in views
+============================
+Create the file webdjango/webdjango/views.py and edit, add your function, like the request.py
+
+from django.shortcuts import render
+import requests
+
+inputs=requests.get("https://reqres.in/api/user")
+    print(inputs.text)
+    inputs=inputs.text
+    return render(request,'home.html',{'inputs':inputs})
+
+

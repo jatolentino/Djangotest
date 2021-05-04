@@ -94,3 +94,49 @@ urlpatterns = [
     url(r'^out', views.out, name='snippet'),
 ]
 
+9. Add button on click
+========================
+Go to webdjango/templates/home.html and add the button function:
+Add the return of out, in webdjango/templates/home.html
+<button onclick = "location.href= '{% url 'snippet' %}'">Execute snippets </button> <hr>
+  {% if inputs %}
+  {{inputs}}
+  {% endif %}
+
+test in Visual studio and MINGW:
+cd button py
+python manage.py runserver 8002  => go to google http://127.0.0.1:8002
+
+
+10. Create inputs-form in HTML
+========================
+Go to webdjango/templates/home.html and add the form
+
+<form action="/external/" method="post">
+	{% csrf_token %}
+	inputs text:
+	<inputs type="text"  name="parameter" required><br><br>
+	{{inputs_external}}<br><br>
+	<inputs type="submit" value="Compile External Python file">
+	
+</form>
+
+11. Add external page
+=====================
+Go to webdjango/webdjango/urls.py, and add
+
+url(r'^external',views.external),
+
+12. Define the function, add its out & the Python file path
+===============================================================
+Go to webdjango/webdjango/views.py, and add
+
+import sys
+from subprocess import run,PIPE
+
+def external(request):
+	in = request.POST.get('parameter')
+	out = run([sys.executable,'F://Webtest//test.py',in],shell=False,stdout=PIPE)
+	print(out)
+	return render(request, 'home.html',{'inputs1':out.stdout.decode('utf-8')})
+

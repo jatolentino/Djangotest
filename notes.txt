@@ -140,3 +140,11 @@ def external(request):
 	print(out)
 	return render(request, 'home.html',{'inputs1':out.stdout.decode('utf-8')})
 
+13. Add out 'inputs1' in the HTML
+==================================
+Go to webdjango/templates/home.html
+
+	{{inputs_external}}<br><br>
+	{{inputs1}}
+	<br><br>
+	<inputs type="submit" value="Execute External Python snippet">

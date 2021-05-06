@@ -11,9 +11,9 @@ $ django-admin.py starproject webdjango
 ================================
 Webtest
  |_webdjango
- |	|_webdjango
- |	|		|_ __init__.py, asgi.py, settings.py, urls.py, wsgi.py
- |	|_manage.py	
+ |  |_webdjango
+ |     |	|_ __init__.py, asgi.py, settings.py, urls.py, wsgi.py
+ |     |_manage.py	
  |_env
  |_request.py
  

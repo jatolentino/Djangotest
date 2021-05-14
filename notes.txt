@@ -1,7 +1,7 @@
 1. In terminal MINGW
 ====================
 $ python -m venv env
-$ source env/snippets/activate
+$ source env/Scripts/activate
 $ pip install django
 $ pip install requests
 $ pip install pillow

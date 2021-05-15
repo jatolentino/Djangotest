@@ -1,5 +1,5 @@
-1. In terminal MINGW
-====================
+1. In GIT terminal
+==================
 $ python -m venv env
 $ source env/Scripts/activate
 $ pip install django

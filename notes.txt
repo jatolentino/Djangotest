@@ -7,8 +7,8 @@ $ pip install requests
 $ pip install pillow
 $ django-admin.py starproject webdjango
 
-2. Create folder and python code
-================================
+2. Create folder and python script
+==================================
 Webtest
  |_webdjango
  |   |_webdjango
@@ -18,7 +18,7 @@ Webtest
  |_env
  |_request.py
  
-create file in Webtest folder called request.py, and add python code
+Create a file in Webtest folder called request.py, and add python code
 import requests
 inputs=request.get("https://reqres.in/api/users")
 print(inputs.text)

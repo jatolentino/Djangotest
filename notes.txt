@@ -129,8 +129,8 @@ Go to webdjango/webdjango/urls.py, and add
 
 url(r'^external',views.external),
 
-12. Define the function, add its out & the Python file path
-===============================================================
+12. Define the function request, add output & the Python file path
+=============================================================
 Go to webdjango/webdjango/views.py, and add
 
 import sys

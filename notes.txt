@@ -54,8 +54,8 @@ inputs=requests.get("https://reqres.in/api/user")
     inputs=inputs.text
     return render(request,'home.html',{'inputs':inputs})
 
-6. Create templates, will contain all .html files
-=================================================
+6. Create templates folder that will contain all .html files
+=============================================================
 Create the folder webdjango/templates
 
 In webdjango/webdjango/settings.py, add the directory template, line 57
